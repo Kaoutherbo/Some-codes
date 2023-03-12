@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdbool.h>
+int sum_digits_care(int x){
+ int rem,s=0;
+ while(x!=0)
+ {
+  rem=x%10;
+  s=s+rem*rem;
+  x/=10;
+ }
+ return s;
+ }
+int  est_heureux (int y){
+ int c=y;
+ do
+ {
+  c=sum_digits_care(c);
+  if(c==4)
+  {
+   return 0;
+  }
+ }while(c!=1);
+ return 1;
+ }
+void afiche_result(long y,long z){
+ while(y<=z)
+ {
+  if(est_heureux(y)==1)
+  {
+   printf("%d",y);
+  }
+  y++;
+ }
+ }
+int main(){
+ long m,n;
+ printf("Enter anumber ");
+ scanf("%d",&m);
+ printf("Enter anumber ");
+ scanf("%d",&n);
+ printf("Tout les heureux nombres entre %d et %d sont :",m,n);
+ afiche_result(n, m);
+ 
+ return 0;
+}
