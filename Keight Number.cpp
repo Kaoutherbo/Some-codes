@@ -1,4 +1,3 @@
-
 #include<stdio.h>
 int digit (int);
 int main()

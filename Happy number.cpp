@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdbool.h>
-int sum_digits_care(int x){
+int sum_square_digits(int x){
  int rem,s=0;
  while(x!=0)
  {
@@ -11,11 +11,11 @@ int sum_digits_care(int x){
  }
  return s;
  }
-int  est_heureux (int y){
+int  is_happy(int y){
  int c=y;
  do
  {
-  c=sum_digits_care(c);
+  c=sum_square_digits(c);
   if(c==4)
   {
    return 0;
@@ -23,10 +23,10 @@ int  est_heureux (int y){
  }while(c!=1);
  return 1;
  }
-void afiche_result(long y,long z){
+void print_result(long y,long z){
  while(y<=z)
  {
-  if(est_heureux(y)==1)
+  if(is_happy(y)==1)
   {
    printf("%d",y);
   }
@@ -40,7 +40,7 @@ int main(){
  printf("Enter anumber ");
  scanf("%d",&n);
  printf("Tout les heureux nombres entre %d et %d sont :",m,n);
- afiche_result(n, m);
+ print_result(n, m);
  
  return 0;
 }
